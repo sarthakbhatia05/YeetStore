@@ -1,0 +1,184 @@
+.small-img-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.small-img-col {
+    flex-basis: 24%;
+    cursor: pointer;
+}
+.small-img-col img{
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+.img-fluid{
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+.single-product select {
+    display: block;
+    padding: 5px 10px;
+    outline:none;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.single-product input {
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.single-product input:focus {
+    outline: none;
+}
+
+.btn-outline-primary {
+    background-color: rgb(224, 224, 224);
+    opacity: 1;
+    transition: 0.3s all;
+    border: none;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+}
+
+.btn-outline-primary:hover {
+    background-color: rgb(22, 34, 87);
+}
+
+.btn-outline-primary span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.2s;
+}
+
+.btn-outline-primary span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -10px;
+    transition: 0.2s;
+}
+
+.btn-outline-primary:hover span {
+    padding-right: 15px;
+}
+
+.btn-outline-primary:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.btn-light {
+    background-color: white;
+    margin-bottom: 15px;
+
+}
+
+.btn-light:hover {
+    background-color: rgb(189, 50, 50);
+    color: white
+}
+
+.btn-light:focus {
+    background-color: rgb(189, 50, 50);
+    color: white
+}
+.rating{
+    margin-right: 350px;
+    color:rgb(22, 34, 87);
+    
+    
+}
+.right-col{
+    margin-right: 0;
+    padding-right: 0;
+}
+
+/* reviews */
+
+.reviews-section {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  .reviews-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .review {
+    border: 0px solid #ddd;
+    margin-bottom: 20px;
+    padding: 20px;
+    max-width: 700px;
+    width: 100%;
+  }
+  
+  .review-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .review-header img {
+    border-radius: 50%;
+    margin-right: 10px;
+    height: 40px;
+    width: auto;
+  }
+  
+  .review-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .review-info h3 {
+    margin: 0;
+    font-size: 25px;
+  }
+  
+  .star-ratings {
+    display: flex;
+  }
+  
+  .star-ratings .fa {
+    font-size: 13px;
+    margin-right: 5px;
+    color:rgb(196, 196, 196)
+  }
+  
+  .star-ratings .checked {
+    color: orange;
+  }
+  
+  .review-date {
+    margin-left: auto;
+  }
+  
+  .review-body {
+    margin-top: 20px;
+  }
+  
+  .see-more {
+    display: inline-block;
+    margin-top: 20px;
+    color: blue;
+  }
+  

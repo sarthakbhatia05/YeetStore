@@ -1,0 +1,21 @@
+tr{  
+    position: relative; /* you may put it out, maybe it will work without it */
+}
+
+th{
+    
+    width: 50%;
+}
+
+.home{
+    margin: 50px;
+    margin-left: 510px;
+    background-color: rgb(42, 62, 151);
+    color: white;
+}
+
+.home:hover{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 10px 25px 30px rgba(196, 213, 235, 0.9);
+    color: rgb(42, 62, 151);
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeet Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/admin/adminhome.css">
+    <link rel="stylesheet" href="/css/admin/categoryproduct.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"> -->
+    <link href="https://fonts.cdnfonts.com/css/abolition-test" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/45b6a0c9b9.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <%- include('./admin-navbar') %>
+    <nav class="sec-nav">
+        <form action="/searchproducts?category=<%= category %>" method="post" >
+            <input placeholder="Find a product" type="text" name="findProduct" class="input" >
+            <button style ="display: inline-block;" class="search-button"> Search</button>
+            <select name="sortOption" value="createdAt">
+                <option > Sort By</option>
+                <option selected="selected" value="createdAt"> Date Added</option>
+                <option value="price">Price Low To High</option>
+                <option value="pricehightolow">Price High To Low</option>
+            </select>
+            </form>
+    </nav>
+
+    <div class="container">
+        <h2>
+            <%=category.toUpperCase()%>
+        </h2>
+        <% for(let i=0;i<1;i++){ %>
+            <div class="row">
+                <% for(let iterator in product){ %>
+                    <div class="col-md-3">
+                        <div class="product-top">
+                            <a href="/products?category=<%=product[iterator].category%>&product=<%=product[iterator].name%>">
+                                <img style="width: 70%;" src=<%=product[iterator].image[0] %>></a>
+                            <div class="overlay">
+                                <a href="/admin/editproductpage?id=<%= product[iterator]._id %>">
+                                <button type="button" class="btn btn-light edit" title="Edit Product">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </button>
+                                </a>
+                                
+                                <form style="display: inline-block;" action="/admin/deleteproduct" method="post">
+                                    <input type="hidden" name="orderQuantity" value="1">
+                                    <input type="hidden" name="id" value="<%=product[iterator]._id %>">
+                                    <input type="hidden" name="user" value="<%=user %>">
+                                    <button type="submit" class="btn btn-light delete " title="Delete product">
+                                        <i class="fa-solid fa-ban"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="product-bottom text-center">
+                            <% for(let rating=0;rating<product[iterator].rating;rating++){ %>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <% } %><span style="font-weight: bold;"><%=product[iterator].rating %></span>
+                                    <h3>
+                                        <a href="/products?category=<%=product[iterator].category%>&product=<%=product[iterator].name%>"> <%=product[j].name %></a>
+                                    </h3>
+                                    <h5>Rs.<%=product[iterator].price%>.00</h5>
+                        </div>
+
+                    </div>
+                    <% } %>
+
+            </div>
+            <% } %>
+    </div>
+    <%- include('../footer') %>
+</body>

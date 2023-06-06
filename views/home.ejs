@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="/css/carousel.css">
+<%- include('./navbar-home') %>
+    <nav class="sec-nav">
+        <form  style="display: flex;"action="/searchproducts"  method="post" >
+        <input  placeholder="Find a product" type="text" name="findProduct" class="input" id="findProduct" >
+        <button  class="search-button"> Search</button>
+        </form>
+
+    </nav>
+    
+    <main>
+        <a href="/category?category=footwear"><img src="shoes1.jpg" class="slide" alt=""></a>
+        <a href="/category?category=laptops"><img src="laptops1.jpg" class="slide" alt=""></a>
+        <a href="/category?category=clothes"><img src="hnmsale.png" class="slide" alt=""></a>
+        <a href="products/?category=mobiles&product=Nothing%20Phone%20(1)"><img src="https://www.91-cdn.com/hub/wp-content/uploads/2022/06/Nothing-Phone-1-feat.png" class="slide" alt=""></a>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span onclick="goPrev()" aria-hidden="true"><img src = "nextPage.png" style="width: 40%; margin-right: 25px; transform: rotateY(180deg);"></span>
+            
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span onclick="goNext()" aria-hidden="true" ><img src = "nextPage.png" style="width: 40%; margin-left: 25px;"></span>
+          </a>
+
+    </main>
+
+    <div class="categories-card">
+        <h1 style="text-align: center;">Top Categories</h1>
+        <div class="categories-row">
+      <a  href="/category?category=mobiles"><div class="categories-column " >
+        <img src="https://www.pngmart.com/files/15/Apple-iPhone-12-PNG-Photos.png"  alt="Mobiles" style="width:50%">
+        
+          <p>Mobile Phones</p>
+      </div></a>
+      <a  href="/category?category=clothes"><div class="categories-column" >
+        <img src="/clothes.png"  alt="clothes" style="width:40%">
+          <p>Clothes</p>
+      </div></a>
+      <a  href="/category?category=watches"><div class="categories-column">
+        <img src="/watches.png"  alt="watches" style="width:80%">
+          <p>Watches</p>
+      </div></a>
+    </div>
+    <div class="categories-row">
+        <a  href="/category?category=laptops"><div class="categories-column " >
+          <img src="/laptops.png" alt="laptops" style="width:89%">
+          
+            <p>Laptops</p>
+        </div></a>
+        <a  href="/category?category=appliances"><div class="categories-column" >
+          <img src="/appliances.png"  alt="appliances" style="width:91%">
+            <p>Home Appliances</p>
+        </div></a>
+        <a  href="/category?category=footwear"><div class="categories-column">
+          <img src="/footwear.png"  alt="footwear" style="width:85%">
+            <p>Footwear</p>
+        </div></a>
+      </div>
+</div>
+    
+
+      <script>
+        const slides = document.querySelectorAll(".slide")
+        let count = 0
+        slides.forEach(
+            (slide,index)=>{
+                slide.style.left = `${index *100}%`
+            }
+        )
+        
+        const goPrev = ()=>{
+            if(count!=0){
+                count--
+                slideImage()
+            }
+        }
+        const goNext = ()=>{
+            if(count <slides.length-1){
+                count++
+                slideImage()
+            }
+            else{
+                count=0
+                slideImage()
+            }
+        }
+        const slideImage = () =>{
+            slides.forEach(
+                (slide) =>{
+                    slide.style.transform = `translateX(-${count *100}%)`
+                }
+            )
+        }
+    </script>
+    
+    <!-- <script>
+      let loader = document.getElementById("preloader")
+      window.addEventListener("load",function(){
+        loader.style.display = "none"
+      })
+    </script> -->
+</body>
+<%- include('./footer.ejs') %>

@@ -1,0 +1,32 @@
+.card {
+    width: 300px;
+    height: 404px;
+    margin: 50px;
+    margin-left: 380px;
+    border-radius: 50px;
+    background: #fafafa;
+    
+   }
+
+.card form{
+    text-align: start;
+    margin:20px;
+    margin-top: 70px;
+    margin-left: 70px;
+    
+    font-size: 20px;
+}
+
+.order-confirm{
+    width: 150px;
+    display: flex;
+    margin-top: 20px;
+    background-color: rgb(42, 62, 151);
+    color: white;
+}
+
+.order-confirm:hover {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 25px 30px rgba(196, 213, 235, 0.4);
+    color: rgb(42, 62, 151);
+  }

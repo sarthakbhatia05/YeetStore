@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeet Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin/userdata.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/abolition-test" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <%- include('./admin-navbar') %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-box clearfix">
+                    <div class="table-responsive">
+                        <table class="table user-list">
+                            <thead>
+                                <tr>
+                                    <th><span>User</span></th>
+                                    <th class="text-center"><span>Order ID </span></th>
+                                    <th class="text-center"><span>Date Ordered </span></th>
+                                    <th><span>status</span></th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for(let iterator in order){ %>
+                                <tr>
+                                    <td>
+                                        <a href="#" class="user-link"><%= order[iterator].user %></a>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="label label-default"><%=  order[iterator]._id%></span>
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="label label-default"><%=  new Date(order[iterator].createdAt).toDateString();%></span>
+                                    </td>
+                                    <td>
+                                        <%= order[iterator].status %>
+                                        
+                                    </td>
+                                    <td style="width: 20%;">
+                                        <% if(order[iterator].status=='placed'){ %>
+                                        <a href="/admin/completeorder?id=<%= order[iterator]._id %>" title="Complete Order" class="table-link danger">
+                                            <span class="fa-stack"> 
+                                                <i class="fa-solid fa-check" style="color: #0d7a0b;" alt=""></i>
+                                                
+                                        </a>
+                                        <% } %>
+                                        <a href="/order/generatepdf?id=<%= order[iterator]._id %>" title="Download Invoice" class="table-link danger">
+                                            <span class="fa-stack"> 
+                                                <i class="fa-solid fa-file-arrow-down" style="color: #10449e;"></i>
+                                                
+                                        </a>
+                                    </td>
+
+                                </tr>
+                                <% } %>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <%- include('../footer') %>
+    </body>

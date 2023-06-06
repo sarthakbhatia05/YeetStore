@@ -1,0 +1,67 @@
+.container
+{
+    width: 100%;
+    margin-top: 2%;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 1px;
+}
+
+.container h2{
+    width: 200px;
+    font-size: 20px;
+    padding: 5px;
+    height: 40px;
+}
+
+.row{
+    margin-top:30px;
+}
+
+.pr
+.container img{
+    height: 110px;
+    margin-left: 50px;
+    width: 100%;
+}
+
+.product-top img{
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    margin-left: 70px;
+    
+}
+.product-bottom .fa{
+    color: rgb(42, 62, 151);
+    font-size: 15px;
+}
+
+.product-bottom h3{
+    font-size: 20px;
+    
+}
+.product-bottom h5{
+    font-size: 15x;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.overlay
+{
+    margin-left: 65px;
+}
+
+.heart {
+    background-color: white;
+
+}
+
+.heart:hover {
+    background-color: rgb(189, 50, 50);
+    color: white
+}
+
+.heart:focus {
+    background-color: rgb(189, 50, 50);
+    color: white
+}
+

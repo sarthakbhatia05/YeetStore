@@ -1,0 +1,14 @@
+<nav class="main-nav">
+    <h2><a style="color: inherit;
+        text-decoration: inherit;"href="/admin/home">Yeet Store</a></h2>
+    <ul>
+        
+        <% if (user) { %>
+        <li><a href="/auth/logout">Logout</a></li>
+        <% }else { %>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Signup</a></li>
+        <% } %>
+    </ul>
+
+</nav>

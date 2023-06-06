@@ -9,7 +9,7 @@ const jwtAuth = require('./middlewares/verifyJWT')
 dotenv.config({path: './config.env'})
 
 const app = express()
-const {PORT} = process.env || 4200
+const PORT = process.env.PORT || 4200
 const publicDirectory = path.join(__dirname, './public')
 
 

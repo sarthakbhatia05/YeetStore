@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "mocha 'testCases/**/*.spec.js' --timeout 5000",
-    "runServer": "nodemon server.js"
+    "runServer": "nodemon server.js",
+    "start": "node server.js"
   },
   "author": "sarthak.bhatia",
   "license": "ISC",

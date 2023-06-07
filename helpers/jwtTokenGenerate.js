@@ -7,7 +7,7 @@ function generateToken(res, email) {
   return res.cookie(process.env.COOKIE_NAME, token, {
     expires: parseInt(process.env.COOKIE_EXPIRY_TIME),
     secure: false,
-    httpOnly: true,
+    httpOnly: false,
   })
 }
 

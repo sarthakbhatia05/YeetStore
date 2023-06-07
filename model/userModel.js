@@ -54,7 +54,9 @@ const UserSchema = new Schema({
 },
 {
   timestamps: true,
-})
+},
+{typeKey: '$type'},
+)
 
 UserSchema.pre('save', async function(next) {
   try {
